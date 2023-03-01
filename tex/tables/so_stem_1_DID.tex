@@ -1,0 +1,27 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{DiD for STEM (so\_stem) in Year 1}
+\begin{tabular}{l*{3}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\midrule
+ncp\_announced   &  -0.0136\sym{***}&  -0.0174\sym{***}&  -0.0187\sym{***}\\
+                &(0.00201)         &(0.00150)         &(0.00126)         \\
+\addlinespace
+female          &  -0.0973\sym{**} &  -0.0899\sym{**} &  -0.0980\sym{***}\\
+                & (0.0277)         & (0.0288)         & (0.0216)         \\
+\addlinespace
+firstgen        &   0.0202         &   0.0300\sym{*}  &   0.0415\sym{**} \\
+                & (0.0111)         & (0.0109)         & (0.0133)         \\
+\addlinespace
+Constant        &    0.273\sym{***}&    0.303\sym{***}&    0.295\sym{***}\\
+                & (0.0341)         & (0.0509)         & (0.0433)         \\
+\midrule
+Observations    &   197091         &    58316         &    54531         \\
+Control\_Cohort  &$\le$ 20156         &$\le$ 20156         &$\le$ 20156         \\
+Treatment\_Cohort&$\ge$ 20186         &  = 20176         &  = 20166         \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

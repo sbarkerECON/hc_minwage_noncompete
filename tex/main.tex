@@ -1,0 +1,354 @@
+% Format
+\documentclass[11pt]{article}
+\usepackage[margin=1.5in]{geometry}
+\pagestyle{headings}
+
+% Packages
+\usepackage{color}
+\usepackage{xcolor} % Probably do not need both...
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[normalem]{ulem}
+\usepackage{morefloats}
+\usepackage[hidelinks]{hyperref}
+	\hypersetup{
+    colorlinks=true,
+    filecolor=magenta,
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+	}
+\newtheorem{conjecture}{Conjecture}
+\usepackage{comment}
+\usepackage{lipsum}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm, textcomp}
+	\DeclareMathOperator*{\argmax}{arg\,max}
+	\DeclareMathOperator*{\argmin}{arg\,min}
+%\usepackage[bb=libus]{mathalpha}
+\usepackage{bbm}
+\usepackage{centernot}
+\usepackage{comment}
+\usepackage{mathtools}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{sectsty}
+	\allsectionsfont{\mdseries\scshape} %\centering
+\usepackage{diffcoeff}
+% TABOUT PACKAGES
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+% TIKZ PACKAGES
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{plotmarks}
+\tikzstyle{common}=[
+    rectangle,
+    minimum size = 3cm,
+    draw=black,
+    thick,
+    fill=blue,
+    text=white
+]
+\tikzstyle{specific}=[
+    rectangle,
+    minimum size = 1cm,
+    draw=black,
+    thick,
+    fill=yellow,
+    text=black
+]
+\tikzstyle{first}=[
+    rectangle,
+    minimum size = .75cm,
+    draw=red,
+    thick,
+    %fill=yellow,
+    text=black
+]
+\tikzstyle{second}=[
+    rectangle,
+    minimum size = .75cm,
+    draw=blue,
+    thick,
+    %fill=red,
+    text=black
+]
+\tikzstyle{third}=[
+    rectangle,
+    minimum size = .75cm,
+    draw=orange,
+    thick,
+    %fill=green,
+    text=black
+]
+
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+% TO FIT LARGE TABLES
+\usepackage[strict]{changepage}
+
+% BibLaTeX
+\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
+%\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
+
+\newtheorem{prop}{Proposition}
+
+\newcommand{\sq}[1]{\langle #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 \vert}
+\newcommand{\ket}[1]{\vert #1 \rangle}
+\newcommand{\indep}{\perp \!\!\! \perp}
+\newcommand{\ubrace}[1]{\underbrace{#1}}
+\newcommand{\percite}[1]{\citeauthor{#1} (\citeyear{#1})}
+\newcommand{\ppercite}[1]{\citeauthor{#1}, \citeyear{#1}}
+\RequirePackage{bm}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\RequirePackage[stable]{footmisc}
+
+\newtheorem*{assumption*}{\assumptionnumber}
+\providecommand{\assumptionnumber}{}
+\makeatletter
+\newenvironment{assumption}[2]
+ {%
+  \renewcommand{\assumptionnumber}{Assumption #1-$\mathcal{#2}$}%
+  \begin{assumption*}%
+  \protected@edef\@currentlabel{#1-$\mathcal{#2}$}%
+ }
+ {%
+  \end{assumption*}
+ }
+\makeatother
+
+
+\title{\textsc{Minimum Wage and Non-Competes in a Search Model with Human Capital}}
+\author{Samuel Barker \& August Bruno\footnote{The Economics
+Department at the University of North Carolina.}}
+
+\bibliography{~/Zotero/library.bib}
+
+%\usepackage[backend=bibtex]{biblatex}
+\begin{document}
+%\include{sections/titlepage}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+\begin{abstract}
+\end{abstract}
+
+\tableofcontents
+
+\setcounter{page}{1}
+
+\section[Model]{Model}%
+\label{sec:model}
+
+\subsection[Setting]{Setting}%
+\label{sub:setting}
+
+Workers can be employed or unemployed. We imagine firms as being a from a
+partial equilibrium--i.e., match specific productivity is given by an
+exogenous distribution $F(X)$. The production of a worker with human
+capital $h_t \in  \{0,h\} $, where $h$ is to be estimated, matched with a
+firm with match specific productivity $x$ is given by: 
+\begin{align*}
+    y_t = x + h_t
+.\end{align*}
+Wages are given by $w_t$. We specify wages as coming from some bargaining
+process or else being the minimum wage, $\underline{w}$. In particular, when it is above the
+minimum wage, we let the wage
+$w_t$ be the wage that solves the following Nash Bargaining problem:
+\begin{align*}
+    \max_w \big ( V(w,h_t) - U(h_t) \big )^{\alpha} \Pi(w,X,h_t)^{1-\alpha}
+,\end{align*}
+where $V(w,h_t)$ is the expected value of employment at wage $w$ and
+human capital $h_t$, $U(h_t)$ is the value of unemployment with human
+capital  $h_t$, and $\Pi(w,X,h_t)$ is the expected profit from hiring a
+worker at wage $w$ and human capital $h_t$. We explore these objects in the
+latter sections, however to preempt questions, because $V(\cdot ,\cdot )$
+and $\Pi(\cdot, \cdot ,\cdot)$ are quasilinear in $w$, this will provide a clean
+characterization of $w_t$.
+
+
+For clarity, let
+\begin{align*}
+    w_{\alpha} \triangleq \argmax_w \big ( V(w,h_t) - U(h_t) \big
+        )^{\alpha} \Pi(w,X,h_t)^{1-\alpha}
+,\end{align*}
+therefore, $w_t$ will be a function of $X$ and $h_t$ given by:
+\begin{align*}
+    w_t(X,h_t) &= \begin{cases}
+        w_{\alpha} &\text{ if } w_\alpha \ge \underline{w} \\
+        \underline{w} &\text{ if } w_\alpha < \underline{w}
+    \end{cases}
+.\end{align*}
+For simplicity of notation, however, we will often write simply $w_t$ rather than
+$w_t(X,h_t)$.
+
+
+\subsection[Workers]{Workers}%
+\label{sub:workers}
+
+Workers encounter firms at some Poisson rate
+$\lambda_0$ when unemployed and $\lambda_1$ when employed. Worker's human
+capital evolves probabilistically. While employed, a worker's human capital
+can increase from $0$ to $h$ with a poisson rate of  $\xi_1$, and while
+unemployed can depreciate from $h$ to $0$ with a poisson rate of $\xi_0$. A
+match is destroyed at some exogenous rate $\rho$. The discount rate is
+given by $r$. While unemployed, workers get flow utility of $b$. While
+employed, workers simply get their wage.
+
+\subsubsection[Unemployment]{Unemployment}%
+\label{subsub:unemployment}
+We can express the value of unemployment by each human capital type, $0$
+and $h$.
+\begin{align*}
+    U(0) &= b \Delta t + \frac{1}{1+r\Delta t} \{ (\lambda_0 \Delta t
+        + o(\Delta t)) \int_{S_X}^{} \max
+    \{V(w_t, 0), U(0)\} dF(X) \\
+         &\;\;\;\;+ (1-(\lambda_0\Delta t + o(\Delta t)) U(0)  \} \\
+         U(0) \{\frac{\Delta t r}{1+r \Delta t} \} 
+    &= b \Delta t + \frac{1}{1+r\Delta t} \{ (\lambda_0 \Delta t
+        + o(\Delta t)) \int_{S_X}^{} \max
+    \{V(w_t, 0), U(0)\} dF(X) \\
+    &\;\;\;\;+ (-\lambda_0\Delta t + o(\Delta t)) U(0)  \} \\
+    U(0) \{\frac{r}{1+r \Delta t} \} 
+    &= b + \frac{1}{1+r\Delta t} \{ (\lambda_0
+        + o(\Delta t)/\Delta t) \int_{S_X}^{} \max
+    \{V(w_t, 0), U(0)\} dF(X)  \\
+    &\;\;\;\;+ (-\lambda_0 + o(\Delta t)/\Delta t) U(0)  \} \\
+         U(0) (r + \lambda_0)
+    &= b +  \lambda_0 \int_{S_X}^{} \max
+    \{V(w_t, 0), U(0)\} dF(X)
+,\end{align*}
+where the final line is obtained by taking the limit as $\Delta t \rightarrow
+0$.
+
+
+Starting with $h_t = h$ and walking through similar steps leads us to a
+similar expression:
+\begin{align*}
+        U(h) &= \Delta t b + \frac{1}{1+r\Delta t}\{
+            (\lambda_0 \Delta t +o(\Delta t)) \int_{S_X}^{} \max \{V(w_t,
+            h), U(h)\} dF(X) \\
+             &\;\;\;\;+ (\xi_0\Delta t +o(\Delta t)) U(0) + (1 - (\lambda_0\Delta t +
+    o(\Delta t)) - (\xi_0\Delta t + o(\Delta t))) U(h) \}
+,\end{align*}
+which then reduces to:
+\begin{align*}
+    U(h)(r+\lambda_0+\xi_0) - \xi_0 U(0) &= b + \lambda_0 \int_{S_X}^{} \max \{V(w_t,
+            h), U(h)\} dF(X)
+.\end{align*}
+Equivalently, we can write a general characterization:
+\begin{align*}
+    U(h_t)(r+\lambda_0+\xi_0) - \xi_0 U(0) &= b + \lambda_0 \int_{S_X}^{} \max \{V(w_t,
+            h_t), U(h_t)\} dF(X)
+.\end{align*}
+
+
+\subsubsection[Employment]{Employment}%
+\label{subsub:employment}
+
+Everything is similar while employed, and we get the following general
+expression:
+%\begin{align*}
+%    V(w_t,0) &= \Delta t w_t + \frac{1}{1+r\Delta t}\{
+%        (\lambda_1 \Delta t +o(\Delta t)) \int_{S_X}^{} \max
+%        \{V(w_t(X',0),0),
+%        V(w_t,0)\} dF(X') \\
+%             &\;\;\;\;+ (\xi_1\Delta t +o(\Delta t)) V(w_t,h) + (1 -
+%             (\lambda_1\Delta t +
+%         o(\Delta t)) - (\xi_1\Delta t + o(\Delta t))) V(w_t,0) \}
+%,\end{align*}
+%which reduces to:
+\begin{align*}
+    V(w_t,h_t)(r+\lambda_1+\xi_1+\delta) - \xi_1 V(w_t,h) &= w_t + \lambda_1
+    \int_{S_X}^{} \max \{V(w_t(X',h_t),h_t), V(w_t,h_t)\} dF(X') + \delta U(h_t)
+.\end{align*}
+
+
+
+\subsection[Firms]{Firms}%
+\label{sub:firms}
+We assume a free entry condition so that the value of a vacancy is zero.
+Firms flow profits are given by the difference between production and wages
+$X + h_t - w_t$. In the case when $h_t = h$, everything is standard as we
+will show. However, when the human capital of the individual is low
+($0$), there is some probability that the productivity will increase from
+$0$ to $h$.
+ \begin{align*}
+     \Pi(w_t,X,h) &= \Delta t(X + h - w_t) + \frac{1}{1+r\Delta t} \{ (\delta
+     \Delta t + o(\Delta t)) \cdot 0 \\
+                  &\;\;\;\;+ (1-(\delta \Delta t + o(\Delta t)))
+ \Pi(w_t,X,h)\}
+\end{align*}
+which reduces to:
+\begin{align*}
+         \Pi(w_t,X,h)(r+\delta) &= X + h - w_t 
+.\end{align*}
+In the case where $h_t = 0$, we have instead:
+\begin{align*}
+    \Pi(w_t,X,0) &= \Delta t(X - w_t) + \frac{1}{1+r\Delta t} \{ (\delta
+        \Delta t + o(\Delta t)) \cdot 0\\
+                 &\;\;\;\;+ (\xi_1 \Delta t + o(\Delta
+        t))\Pi(w_t,X,h) + (1-(\delta \Delta t + o(\Delta t))
+     -(\xi_1 \Delta t + o(\Delta t)))
+ \Pi(w_t,X,0)\}
+\end{align*}
+which reduces to:
+\begin{align*}
+    \Pi(w_t,X,0)(r+\delta+\xi_1) = X - w_t + \xi_1 \Pi(w_t,X,h)
+.\end{align*}
+
+
+Again, we can write a general characterization as:
+\begin{align*}
+    \Pi(w_t,X,h_t)(r+\delta+\xi_1) = X + h_t - w_t +  \xi_1 \Pi(w_t,X,h)
+.\end{align*}
+
+
+The main point of this section is to emphasis the following: when $h_t =
+0$, it is possible that a firm may employ a worker at a wage  $w_t > X$
+because of the expected future profits that may accrue if  $h_t$
+transitions to $h$: $\xi_1 \Pi(w_t,X,h)$. This is, to our knowledge, an unexplored feature of
+human capital in search models, especially in the context of minimum wages.
+We also seek to extend our model to include choices by the firm to
+implement non-compete clauses as a way to increase the expected future
+profits associated with hiring a worker--without such a clause, a worker
+will be unable to commit to a staying at the firm. With the commitment
+device, however, workers and firms are able to enjoy the surplus of the
+match.
+
+
+\subsection[Wage Determination]{Wage Determination}%
+\label{sub:wage_determination}
+
+First, we consider the case without a minimum wage for simplicity, and then
+we return to that feature.
+
+The first thing to note is that for all $h_t$,  $V(w_t,h_t)$ is increasing
+in  $w_t$. Second, whenever the minimum wage is not binding, $w_t$ is
+increasing in $X$.\footnote{This is obvious, but needs some justification.}
+
+With this in mind, let $\underline{X}(h_t)$ be the match specific productivity such that
+$V(w_t(\underline{X},h_t),h_t) = U(h_t)$.\footnote{Is it the case that
+$\underline{X}(0) = \underline{X}(h)$? I do not think so.} With this
+notation, we can simplify the value of unemployment:
+\begin{align*}
+    U(h_t)(r+\lambda_0+\xi_0) - \xi_0 U(0) &= b + \lambda_0
+    \int_{\underline{X}(h_t)}^{\infty} V(w_t, h_t) dF(X) +
+    \lambda_0F(\underline{X}(h_t)) U(h_t)
+.\end{align*}
+
+
+
+\end{document}

@@ -1,0 +1,28 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{DiD for STEM (pstem\_rf) in Cohort 20186}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\midrule
+ncp\_announced   &  -0.0153         &  -0.0334         &  -0.0118         &   0.0204         \\
+                & (0.0197)         & (0.0245)         & (0.0283)         & (0.0449)         \\
+\addlinespace
+female          &   -0.138\sym{***}&   -0.135\sym{***}&   -0.118\sym{***}&   -0.108\sym{***}\\
+                & (0.0204)         & (0.0212)         & (0.0216)         & (0.0226)         \\
+\addlinespace
+firstgen        &   0.0951\sym{***}&   0.0557\sym{***}&   0.0458\sym{**} &   0.0356\sym{***}\\
+                & (0.0112)         &(0.00793)         & (0.0111)         &(0.00785)         \\
+\addlinespace
+Constant        &    0.197\sym{***}&    0.220\sym{***}&    0.228\sym{***}&    0.227\sym{***}\\
+                & (0.0301)         & (0.0342)         & (0.0273)         & (0.0295)         \\
+\midrule
+Observations    &   137449         &   212772         &   353464         &   503189         \\
+Control\_Cohort  &$\le$ 20136         &$\le$ 20136         &$\le$ 20146         &$\le$ 20156         \\
+Treatment\_Cohort&$\ge$ 20186         &$\ge$ 20186         &$\ge$ 20186         &$\ge$ 20186         \\
+Year\_of\_Outcome &        4         &        3         &        2         &        1         \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

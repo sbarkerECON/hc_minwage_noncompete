@@ -1,0 +1,96 @@
+
+% Format
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\pagestyle{headings}
+
+% Packages
+\usepackage{color}
+\usepackage{xcolor} % Probably do not need both...
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage[normalem]{ulem}
+%\usepackage{morefloats}
+\usepackage{hyperref}
+	\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+	}
+\newtheorem{conjecture}{Conjecture}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm, textcomp}
+	\DeclareMathOperator*{\argmax}{arg\,max}
+	\DeclareMathOperator*{\argmin}{arg\,min}
+\usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+% TABOUT PACKAGES
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{subcaption}
+% TIKZ PACKAGES
+\usepackage{tikz}
+
+% BibLaTeX
+
+\newcommand{\sq}[1]{\langle #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 \vert}
+\newcommand{\ket}[1]{\vert #1 \rangle}
+\newcommand{\indep}{\perp \!\!\! \perp}
+\newcommand{\ubrace}[1]{\underbrace{#1}}
+\newcommand{\percite}[1]{\citeauthor{#1} (\citeyear{#1})}
+\RequirePackage{bm}
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}
+\RequirePackage[stable]{footmisc}
+
+\newtheorem*{assumption*}{\assumptionnumber}
+\providecommand{\assumptionnumber}{}
+\makeatletter
+\newenvironment{assumption}[2]
+ {%
+  \renewcommand{\assumptionnumber}{Assumption #1-$\mathcal{#2}$}%
+  \begin{assumption*}%
+  \protected@edef\@currentlabel{#1-$\mathcal{#2}$}%
+ }
+ {%
+  \end{assumption*}
+ }
+\makeatother
+
+%\usepackage{tex/output/numbers}
+\usepackage{output/numbers}
+
+\title{\textsc{Minimum Wage and Non-Competes in a Search Model with Human
+Capital}}
+\author{Samuel Barker and August Bruno}
+
+\begin{document}
+\maketitle
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+\setcounter{page}{1}
+\begin{abstract}
+\end{abstract}
+
+\tableofcontents
+
+\section[Model Minimum Wage and Human Capital]{Model: Minimum Wage and Human
+Capital}%
+\label{sec:model_minimum_wage_and_human_capital}
+
+Individuals can be employed or unemployed. There is bargaining over the
+wage. This is a partial equilibrium model.
+
+
+
+\appendix
+%\input{sections/appendix.tex}
+
+\end{document}

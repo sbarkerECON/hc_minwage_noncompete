@@ -1,0 +1,27 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{DiD for STEM (so\_stem) in Year 4}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\midrule
+ncp\_announced   &    0.124\sym{**} &    0.122\sym{*}  &    0.144\sym{**} &    0.135\sym{**} &    0.144\sym{**} \\
+                & (0.0384)         & (0.0429)         & (0.0387)         & (0.0442)         & (0.0391)         \\
+\addlinespace
+female          &   -0.133\sym{***}&   -0.134\sym{***}&   -0.135\sym{***}&   -0.141\sym{***}&   -0.141\sym{***}\\
+                & (0.0244)         & (0.0251)         & (0.0234)         & (0.0237)         & (0.0229)         \\
+\addlinespace
+firstgen        &   0.0782\sym{***}&   0.0522\sym{***}&   0.0613\sym{***}&    0.125\sym{***}&    0.144\sym{***}\\
+                & (0.0160)         &(0.00592)         &(0.00824)         & (0.0131)         & (0.0236)         \\
+\addlinespace
+Constant        &    0.239\sym{***}&    0.259\sym{***}&    0.249\sym{***}&    0.286\sym{***}&    0.236\sym{***}\\
+                & (0.0364)         & (0.0381)         & (0.0315)         & (0.0389)         & (0.0488)         \\
+\midrule
+Observations    &    58929         &    77453         &    75832         &    75096         &    75323         \\
+Control\_Cohort  &$\le$ 20136         &$\le$ 20136         &$\le$ 20136         &$\le$ 20136         &$\le$ 20136         \\
+Treatment\_Cohort&$\ge$ 20186         &  = 20176         &  = 20166         &  = 20156         &  = 20146         \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}
