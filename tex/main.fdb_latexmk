@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1677636258 "main.aux" "main.bbl" "main" 1677638662
-  "/home/sbarker/Zotero/library.bib" 1675448804 507093 0192464d7c37d9a361f62084c6489f5a ""
+["bibtex main"] 1678161814 "main.aux" "main.bbl" "main" 1678162537
+  "/home/sbarker/Zotero/library.bib" 1677724834 507093 0192464d7c37d9a361f62084c6489f5a ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1575845417 65050 5c39e6f144c843a658dad8c93d2a6f3c ""
-  "main-blx.bib" 1677638661 340 f1540d3f2e89ae4d574255b13c3f0b0b "lualatex"
-  "main.aux" 1677638661 2895 2d969feb5b78b8291e40f79e2e8367aa "lualatex"
+  "main-blx.bib" 1678162536 340 f1540d3f2e89ae4d574255b13c3f0b0b "lualatex"
+  "main.aux" 1678162536 2895 2d969feb5b78b8291e40f79e2e8367aa "lualatex"
   (generated)
-  "main.blg"
   "main.bbl"
-["lualatex"] 1677638660 "main.tex" "main.pdf" "main" 1677638662
+  "main.blg"
+["lualatex"] 1678162535 "main.tex" "main.pdf" "main" 1678162537
   "/home/sbarker/.texlive2019/texmf-var/luatex-cache/generic-dev/fonts/otl/lmroman10-bold.luc" 1599533964 124213 be24eb5b757919758e60aa4f6d6aeb1d ""
   "/home/sbarker/.texlive2019/texmf-var/luatex-cache/generic-dev/fonts/otl/lmroman10-regular.luc" 1599531340 123142 d3b29489a8ffc91cd4e03357f67b2fc5 ""
   "/home/sbarker/.texlive2019/texmf-var/luatex-cache/generic-dev/fonts/otl/lmroman12-bold.luc" 1599573084 124110 8287c14a46bbf501cc26dc995afe5943 ""
@@ -299,17 +299,17 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1603918124 4466278 956ccdc8d57f396eef7b8798b3b11e08 ""
   "/var/lib/texmf/tex/generic/config/language.dat" 1603920122 2887 32634c8d32a7c6cb77393264250dac80 ""
   "/var/lib/texmf/web2c/luatex/lualatex.fmt" 1603920127 2639666 c03a24588deb37ab5ad9439285a1d635 ""
-  "main.aux" 1677638661 2895 2d969feb5b78b8291e40f79e2e8367aa "lualatex"
-  "main.bbl" 1677636259 512 da5a5cf020c0fbcb3437098fa3006702 "bibtex main"
-  "main.out" 1677638661 728 6808a3a656d961297800fcc51d6afff6 "lualatex"
-  "main.run.xml" 1677638661 2610 d6c4363e421bf487b6ade0de0356606f "lualatex"
-  "main.tex" 1677638659 11571 4933f7b47d0289c894c6816ad37bc696 ""
-  "main.toc" 1677638661 908 123b45ae6a9a65a056a827ef40bc38c9 "lualatex"
+  "main.aux" 1678162536 2895 2d969feb5b78b8291e40f79e2e8367aa "lualatex"
+  "main.bbl" 1678161814 512 da5a5cf020c0fbcb3437098fa3006702 "bibtex main"
+  "main.out" 1678162536 728 6808a3a656d961297800fcc51d6afff6 "lualatex"
+  "main.run.xml" 1678162536 2610 d6c4363e421bf487b6ade0de0356606f "lualatex"
+  "main.tex" 1678162534 12632 07fe85704bbb051669d06f041a94fa37 ""
+  "main.toc" 1678162536 908 123b45ae6a9a65a056a827ef40bc38c9 "lualatex"
   (generated)
-  "main.out"
-  "main.pdf"
-  "main.run.xml"
-  "main.toc"
   "main-blx.bib"
+  "main.toc"
+  "main.pdf"
+  "main.out"
+  "main.run.xml"
   "main.log"
   "main.aux"

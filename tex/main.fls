@@ -1,4 +1,4 @@
-PWD /home/sbarker/Dropbox/thinkpad_dir/pdb/academic_files/projects/noncompete_search/tex
+PWD /home/sbarker/Dropbox/thinkpad_dir/pdb/academic_files/projects/hc_minwage_noncompete/tex
 INPUT /var/lib/texmf/web2c/luatex/lualatex.fmt
 INPUT ./main.tex
 OUTPUT main.log

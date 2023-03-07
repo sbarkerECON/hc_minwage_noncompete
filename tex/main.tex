@@ -267,7 +267,7 @@ expression:
 %        V(w_t,0)\} dF(X') \\
 %             &\;\;\;\;+ (\xi_1\Delta t +o(\Delta t)) V(w_t,h) + (1 -
 %             (\lambda_1\Delta t +
-%         o(\Delta t)) - (\xi_1\Delta t + o(\Delta t))) V(w_t,0) \}
+%         o(\Delta t)) - (\xi_1\Delta t + o(\Delta t))) V(w_T,0) \}
 %,\end{align*}
 %which reduces to:
 \begin{align*}
@@ -349,6 +349,27 @@ notation, we can simplify the value of unemployment:
     \lambda_0F(\underline{X}(h_t)) U(h_t)
 .\end{align*}
 
+
+Theoretically, the result of the Nash Bargaining process could result in
+some wage contract with stipulations (e.g., a non-compete) with some value
+$C$. Above we explored what this would look like if the contract could be
+summarized by an hourly wage rate. However workers have quasilinear
+utility, therefore any contract with a value $C$ such that:
+ \begin{align*}
+     C_t &= V(w^{*},h_t) \\
+         &\text{ where }\\
+    w^{*} &=  \argmax_w \big ( V(w,h_t) - U(h_t) \big )^{\alpha} \Pi(w,X,h_t)^{1-\alpha}
+\end{align*}
+would be equivalent from a welfare perspective.\footnote{What edits to the
+model are necessary for non-competes to have bite?} The main advantage of
+the alternative contracts $C_t$ are if the standard contract $V(w^{*},h_t)$
+is not feasible because $w^{*} < \underline{w}$. The firm may be able to
+offer some contract $C_t$ such that $C_t = V(w^{*},h_t)$.\footnote{Note
+that if $\Pi(\underline{w},X,h) < 0$, then no contract $C$ is
+possible.}
+
+In the non-compete case, $C$ would take the form of ensuring a length of
+time of employment.
 
 
 \end{document}
