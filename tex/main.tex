@@ -255,6 +255,7 @@ Equivalently, we can write a general characterization:
 .\end{align*}
 
 
+
 \subsubsection[Employment]{Employment}%
 \label{subsub:employment}
 
@@ -271,9 +272,11 @@ expression:
 %,\end{align*}
 %which reduces to:
 \begin{align*}
-    V(w_t,h_t)(r+\lambda_1+\xi_1+\delta) - \xi_1 V(w_t,h) &= w_t + \lambda_1
-    \int_{S_X}^{} \max \{V(w_t(X',h_t),h_t), V(w_t,h_t)\} dF(X') + \delta U(h_t)
+    V(w_t,h_t)(r+\lambda_1+\xi_1+\delta) &= w_t + \lambda_1
+    \int_{S_X}^{} \max \{V(w_t(X',h_t),h_t), V(w_t,h_t)\} dF(X') \\
+    &\;\;\;\; + \delta U(h_t) + \xi_1 V(w_t,h)
 .\end{align*}
+
 
 
 
@@ -288,31 +291,32 @@ $0$ to $h$.
  \begin{align*}
      \Pi(w_t,X,h) &= \Delta t(X + h - w_t) + \frac{1}{1+r\Delta t} \{ (\delta
      \Delta t + o(\Delta t)) \cdot 0 \\
-                  &\;\;\;\;+ (1-(\delta \Delta t + o(\Delta t)))
- \Pi(w_t,X,h)\}
+                  &\;\;\;\;+ (1-(\delta \Delta t + o(\Delta t))-(\lambda_1
+                  \Delta t + o(\Delta t))) \Pi(w_t,X,h)\}
 \end{align*}
 which reduces to:
 \begin{align*}
-         \Pi(w_t,X,h)(r+\delta) &= X + h - w_t 
+         \Pi(w_t,X,h)(r+\lambda_1+\delta) &= X + h - w_t 
 .\end{align*}
 In the case where $h_t = 0$, we have instead:
 \begin{align*}
     \Pi(w_t,X,0) &= \Delta t(X - w_t) + \frac{1}{1+r\Delta t} \{ (\delta
-        \Delta t + o(\Delta t)) \cdot 0\\
-                 &\;\;\;\;+ (\xi_1 \Delta t + o(\Delta
-        t))\Pi(w_t,X,h) + (1-(\delta \Delta t + o(\Delta t))
-     -(\xi_1 \Delta t + o(\Delta t)))
+        \Delta t + o(\Delta t)) \cdot 0 + (\xi_1 \Delta t + o(\Delta
+        t))\Pi(w_t,X,h) \\
+                 &\;\;\;\; + (1-(\delta \Delta t + o(\Delta t))
+     -(\xi_1 \Delta t + o(\Delta t))
+     -(\lambda_1 \Delta t + o(\Delta t)))
  \Pi(w_t,X,0)\}
 \end{align*}
 which reduces to:
 \begin{align*}
-    \Pi(w_t,X,0)(r+\delta+\xi_1) = X - w_t + \xi_1 \Pi(w_t,X,h)
+    \Pi(w_t,X,0)(r+\lambda_1+\delta+\xi_1) = X - w_t + \xi_1 \Pi(w_t,X,h)
 .\end{align*}
 
 
 Again, we can write a general characterization as:
 \begin{align*}
-    \Pi(w_t,X,h_t)(r+\delta+\xi_1) = X + h_t - w_t +  \xi_1 \Pi(w_t,X,h)
+    \Pi(w_t,X,h_t)(r+\lambda_1+\delta+\xi_1) = X + h_t - w_t +  \xi_1 \Pi(w_t,X,h)
 .\end{align*}
 
 
@@ -327,6 +331,75 @@ profits associated with hiring a worker--without such a clause, a worker
 will be unable to commit to a staying at the firm. With the commitment
 device, however, workers and firms are able to enjoy the surplus of the
 match.
+
+
+If there are non-competes, we can change a number of things. For now, let a
+noncompete mean the following: worker's encounter firms at a modified rate
+$\lambda_1(\tau) < \lambda_1 \forall \tau$ where $\tau \in [0,T]$ is the
+time since starting and $T$ is the length of the
+noncompete agreements (NCA). Similarly, we have $\delta(\tau)$. Therefore,
+this is a non-stationary problem.  We can write the expected profits
+as follows:
+ \begin{align*}
+     \Pi(w_t,X,h,\tau) &= \Delta t(X + h - w_t) + \frac{1}{1+r\Delta t} \{
+         ( \textstyle\int_{\tau}^{\tau + \Delta t}  \delta(t) dt + o(\Delta t)) \cdot 0 \\
+                       &\;\;\;\;+ (1-(\textstyle\int_{\tau}^{\tau+\Delta t}
+                       \delta(t)dt + o(\Delta
+                       t))-(\textstyle\int_{\tau}^{\tau + \Delta t}
+                       \lambda_1(t)dt + o(\Delta t)))
+                   \Pi(w_t,X,h,\tau + \Delta t)\}
+.\end{align*}
+Rearranging, we get
+\begin{align*}
+         &\frac{(1+ r \Delta t) \Pi(w_t,X,h,\tau) - 
+                   \textstyle\int_{\tau}^{\tau + \Delta t} \Pi(w_t,X,h,t)dt\}
+         }{1 + r \Delta t} \\
+         &\;\;\;\;\;\;\;\; = \Delta t(X + h - w_t) + \frac{1}{1+r\Delta t} \{
+         ( \textstyle\int_{\tau}^{\tau + \Delta t}  \delta(t) dt + o(\Delta t)) \cdot 0 \\
+         &\;\;\;\;\;\;\;\;+ (-(\textstyle\int_{\tau}^{\tau+\Delta t}
+                       \delta(t)dt + o(\Delta
+                       t))-(\textstyle\int_{\tau}^{\tau + \Delta t}
+                       \lambda_1(t)dt + o(\Delta t)))
+                   \Pi(w_t,X,h,\tau + \Delta t)\}
+\end{align*}
+Next we divide through by $\Delta t$. On the RHS we get,
+\begin{align*}
+    \frac{r \Pi(w_t,X,h,\tau)}{1 + r \Delta t}
+    + 
+    \frac{1}{1 + r \Delta t}\Big (\frac{\Pi(w_t,X,h,\tau) -
+    \Pi(w_t,X,h,\tau + \Delta t)}{\Delta t} \Big )
+,\end{align*}
+and taking the limit as $\Delta t \rightarrow 0$:
+\begin{align*}
+    r \Pi(w_t,X,h,\tau)
+    + \frac{\partial}{\partial t} \Pi(w_t,X,h,t)\Big|_{t = \tau}
+\end{align*}
+where the second term follows from the definition of a derivative.
+
+The LHS is:
+\begin{align*}
+         &(X + h - w_t) + \frac{1}{1+r\Delta t} \{
+         ( \frac{1}{\Delta t}\textstyle\int_{\tau}^{\tau + \Delta t}
+         \delta(t) dt + o(\Delta t)/\Delta t) \cdot 0 \\
+         &\;\;\;\; +(-(\frac{1}{\Delta t}\textstyle\int_{\tau}^{\tau+\Delta t}
+                       \delta(t)dt + o(\Delta
+                       t)/\Delta t)-(\frac{1}{\Delta t}\textstyle\int_{\tau}^{\tau + \Delta t}
+                       \lambda_1(t)dt + o(\Delta t)/\Delta t))
+                   \Pi(w_t,X,h,\tau + \Delta t)\}
+.\end{align*}
+Taking the limit as $\Delta t \rightarrow 0$ and using the Mean Value Theorem for Integrals, we can get:
+\begin{align*}
+         (X + h - w_t) - (\delta(\tau) + \lambda_1(\tau)) \Pi(w_t,X,h,\tau )
+.\end{align*}
+Rearranging and putting these together, we get:
+\begin{align*}
+    (r +\delta(\tau) +\lambda_1(\tau)) \Pi(w_t,X,h,\tau)
+         &=  (X + h - w_t) - \frac{\partial}{\partial t} \Pi(w_t,X,h,t)\Big|_{t = \tau}
+\end{align*}
+Lastly, $\Pi(w_t,X,h,T) = \Pi(w_t,X,h)$ and $\frac{\partial }{\partial t}
+\Pi(w_t,X,h,t)\Big |_{t = T} = 0$.
+
+
 
 
 \subsection[Wage Determination]{Wage Determination}%
